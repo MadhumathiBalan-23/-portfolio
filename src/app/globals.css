@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-primary: #6C3DE8;
+  --color-primary-hover: #5929D9;
+  --color-secondary: #8B5CF6;
+  --color-navy: #172044;
+  --color-lavender: #F7F5FF;
+  --color-muted: #566078;
+  --color-border-soft: #EAE5F8;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #6C3DE8;
+  --primary-hover: #5929D9;
+  --secondary: #8B5CF6;
+  --navy: #172044;
+  --lavender: #F7F5FF;
+  --muted: #566078;
+  --border-soft: #EAE5F8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #172044;
+  background-color: #ffffff;
+  font-family: var(--font-sans), "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography polish */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+}
+
+/* Custom Utilities for dependable styling */
+.text-navy {
+  color: #172044;
+}
+
+.text-muted {
+  color: #566078;
+}
+
+.text-primary-purple {
+  color: #6C3DE8;
+}
+
+.bg-primary-purple {
+  background-color: #6C3DE8;
+}
+
+.bg-lavender-section {
+  background-color: #F7F5FF;
+}
+
+.border-soft {
+  border-color: #EAE5F8;
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 20px -2px rgba(108, 61, 232, 0.06), 0 2px 6px -1px rgba(23, 32, 68, 0.04);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 16px 36px -6px rgba(108, 61, 232, 0.12), 0 6px 14px -2px rgba(23, 32, 68, 0.05);
+}
+
+/* Subtle custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f5ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #c7b9f8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
 }
